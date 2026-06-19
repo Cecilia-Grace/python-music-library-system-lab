@@ -2,9 +2,9 @@
 
 from song import Song
 
-Song.count = 0
-Song.genre_count = {}
-Song.artist_count = {}
+Song._count = 0 
+Song._genre_count = {}
+Song._artist_count = {}
 
 class TestSong:
     '''Class "Song" in song.py'''
@@ -22,21 +22,21 @@ class TestSong:
 
     def test_has_song_count(self):
         '''counts the total number of Song objects.'''
-        assert(Song.count == 4)
+        assert(Song.count() == 4)
         Song("Sara Smile", "Hall and Oates", "Pop")
-        assert(Song.count == 5)
+        assert(Song.count() == 5)
 
     def test_has_genres(self):
         '''keeps track of all Song genres.'''
-        assert("Rap" in Song.genres)
-        assert("Pop" in Song.genres)
-        assert("Rock" in Song.genres)
+        assert("Rap" in Song.genres())
+        assert("Pop" in Song.genres())
+        assert("Rock" in Song.genres())
 
     def test_has_artists(self):
         '''keeps track of all Song artists.'''
-        assert("Jay Z" in Song.artists)
-        assert("Beyonce" in Song.artists)
-        assert("Hall and Oates" in Song.artists)
+        assert("Jay Z" in Song.artists())
+        assert("Beyonce" in Song.artists())
+        assert("Hall and Oates" in Song.artists())
         
     def test_has_genre_count(self):
         '''keeps count of Songs for each genre.'''
